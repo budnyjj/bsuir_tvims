@@ -87,6 +87,14 @@ rc('text', usetex=True)
 ...
 ```
 
++ Для того, чтобы при генерации отчета использовался красивый кириллический Times New Roman,
+  установите latex-пакет [pscyr](http://donik.org/wiki/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0_PSCyr_%D0%B2_LaTeX) и
+  раскомментируйте следующую строчку в файле tex/packages.tex
+
+```latex
+\usepackage{pscyr}
+```
+
 Bugs & Reports
 --------------
 
