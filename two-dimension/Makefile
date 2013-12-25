@@ -1,0 +1,21 @@
+PYTHON=python2
+DATA=data/data.txt
+
+default: calculate report
+
+clean:
+	rm -rf *.log
+	rm -rf *~
+	rm -rf *.dvi
+	rm -rf *.aux
+
+calculate:
+	${PYTHON} tr.py ${DATA}
+
+doc:
+	cd doc; make doc
+
+report:
+	pdflatex report.tex
+
+.PHONY: clean doc
