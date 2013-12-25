@@ -9,7 +9,7 @@ clean:
 	rm -rf *.dvi
 	rm -rf *.aux
 
-calculate:
+calc:
 	${PYTHON} tr.py ${DATA}
 
 doc:

@@ -1,7 +1,7 @@
 PYTHON=python2
 DATA=data/data.txt
 
-default: calculate report
+default: calc report
 
 clean:
 	rm -rf *.log
@@ -9,7 +9,7 @@ clean:
 	rm -rf *.dvi
 	rm -rf *.aux
 
-calculate:
+calc:
 	${PYTHON} tr.py ${DATA}
 
 doc:
