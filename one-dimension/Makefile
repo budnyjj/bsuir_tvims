@@ -1,7 +1,7 @@
 PYTHON=python2
 DATA=data/data.txt
 
-default: calculate report
+default: calc report
 
 clean:
 	rm -rf *.log
