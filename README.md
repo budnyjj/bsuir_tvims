@@ -92,8 +92,6 @@ Bugs & Reports
 
 Замечания и предложения приветствуются!
 
-Присылайте их сюда:
-	+ [budnyjj@gmail.com](mailto:budnyjj@gmail.com);
-	+ [anashkevichp@gmail.com](mailto:anashkevichp@gmail.com).
+Присылайте их сюда: [budnyjj@gmail.com](mailto:budnyjj@gmail.com); [anashkevichp@gmail.com](mailto:anashkevichp@gmail.com).
 
 
