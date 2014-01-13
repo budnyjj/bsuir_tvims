@@ -145,24 +145,88 @@
 \newpage
 
 \subsection{Выдвижение гипотезы о законе распределения случайной величины $ X $}
-По виду графика эмпирической функции распределения $F^*(x)$ и гистограмм выдвинем двухальтернативную
-гипотезу о законе распределения случайной величины:
+По виду графика эмпирической функции распределения $F^*(x)$ и гистограмм выдвинем один из следующих вариантов двухальтернативной
+гипотезы о законе распределения случайной величины:
+\begin{enumerate}
 
-\begin{itemize}
-	\item $H_0$ --- величина $X$ распределена по нормальному закону:
+\item
+	$H_0$ --- величина $X$ распределена по равномерному закону:
 	\begin{equation}
-          f(x) = f_0(x) = \frac{1}{\sigma\sqrt{2\pi}} \cdot \text{exp} \left[-\frac{(x-m)^2}{2\sigma^2} \right],
+		\begin{aligned}
+			f(x)=
+			\left\{
+				\begin{aligned}
+					&0, \hspace{11.5mm} x < a, \\
+					&\frac{1}{b-a}, \hspace{2mm} a \le x \le b, \\
+					&1, \hspace{11.5mm} x > b.
+				\end{aligned}
+			\right.
+		\end{aligned}
 	\end{equation}
-        \begin{equation}
-          F(x) = F_0(x) = 0.5 + \left( \frac{x-m}{\sigma} \right).
-        \end{equation}
-          
-	\item $H_1$ --- величина $X$ не распределена по нормальному закону:
-          \begin{align}
+	\begin{equation}
+		\begin{aligned}
+			F(x)=
+			\left\{
+				\begin{aligned}
+					&0, \hspace{11.5mm} x < a, \\
+					&\frac{x-a}{b-a}, \hspace{2mm} a \le x \le b, \\
+					&1, \hspace{11.5mm} x > b.
+				\end{aligned}
+			\right.
+		\end{aligned}
+	\end{equation}
+	$H_1$ --- величина $X$ не распределена по равномерному закону:
+	\begin{align}
 		f(x) & \neq f_0(x) ,&
 		F(x) & \neq F_0(x).
 	\end{align}
-\end{itemize}
+
+\item
+	$H_0$ --- величина $X$ распределена по экспоненциальному закону:
+	\begin{equation}
+		\begin{aligned}
+			&f(t)=
+			\left\{
+				\begin{aligned}
+					&0, \hspace{11mm} t < 0, \\
+					&\lambda e^{-\lambda t}, \hspace{2mm} a \le x \le b.
+				\end{aligned}
+			\right.
+		\end{aligned}
+	\end{equation}
+	\begin{equation}
+		\begin{aligned}
+			&F(t)=
+			\left\{
+				\begin{aligned}
+					&0, \hspace{17mm} t < 0, \\
+					&1 - e^{-\lambda t}, \hspace{2mm} a \le x \le b.
+				\end{aligned}
+			\right.
+		\end{aligned}
+	\end{equation}
+	$H_1$ --- величина $X$ не распределена по экспоненциальному закону:
+	\begin{align}
+		f(x) & \neq f_0(x) ,&
+		F(x) & \neq F_0(x).
+	\end{align}
+
+\item
+	$H_0$ --- величина $X$ распределена по нормальному закону:
+	\begin{equation}
+	  f(x) = f_0(x) = \frac{1}{\sigma\sqrt{2\pi}} \cdot \text{exp} \left[-\frac{(x-m)^2}{2\sigma^2} \right],
+	\end{equation}
+	\begin{equation}
+	  F(x) = F_0(x) = 0.5 + \left( \frac{x-m}{\sigma} \right).
+	\end{equation}
+	$H_1$ --- величина $X$ не распределена по нормальному закону:
+	\begin{align}
+		f(x) & \neq f_0(x) ,&
+		F(x) & \neq F_0(x).
+	\end{align}
+\end{enumerate}
+
+В данном примере выдвинем двухальтернативную гипотезу о нормальном законе распределения случайной величины.
 
 Учитывая, что $m^* = \overline{x} = \input{val/expectation_value}$ и $\sigma^* = \sqrt{D^*} = \input{val/standart_deviation_value}$, получаем гипотетическую функцию распределения:
 
