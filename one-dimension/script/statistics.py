@@ -509,7 +509,7 @@ def plotStatSeriesEqSize(series, filename):
         histData.extend(interval['series'])
     plt.hist(histData, normed=True)
     plt.xlabel('$ x $')
-    plt.ylabel('$ p^{*}(x) $')
+    plt.ylabel('$ f^{*}(x) $')
     plt.grid(True)
     plt.savefig(filename)
     plt.clf()
@@ -524,7 +524,7 @@ def plotStatSeriesEqProbability(series, filename):
 
     plt.hist(histData, bins=histIntervals, normed=True)
     plt.xlabel('$ x $')
-    plt.ylabel('$ p^{*}(x) $')
+    plt.ylabel('$ f^{*}(x) $')
     plt.grid(True)
     plt.savefig(filename)
     plt.clf()
