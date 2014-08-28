@@ -273,7 +273,8 @@
 	\left| 1 - \sum_{j=1}^{10} p_j \right| = value \le 0.01.
 \end{align}
 
-В cоответствии с формулой~\eqref{eq:chi^2} получаем $\chi^2= 100 \cdot \input{val/pirson_normal_sum} = \input{val/pirson_normal} $.
+В cоответствии с формулой~\eqref{eq:chi^2} получаем
+$\chi^2= \input{val/series_size} \cdot \input{val/pirson_normal_sum} = \input{val/pirson_normal} $.
 
 Вычислим число степеней свободы: $ k = M - 1 - s = 10 - 1 - 2 = 7 $. 
 
@@ -296,7 +297,7 @@
 Вычислим значение критерия Колмогорова по формуле:
 \begin{align}
   \lambda &= \sqrt{n} \cdot Z, \\ \nonumber
-  \lambda &= \sqrt{100} \cdot \input{val/kolmogorov_normal_z} = \input{val/kolmogorov_normal}.
+	\lambda &= \sqrt{\input{val/series_size}} \cdot \input{val/kolmogorov_normal_z} = \input{val/kolmogorov_normal}.
 \end{align}
 
 Из таблицы <<критических значений>> для критерия Колмогорова по заданному уровню значимости ($\alpha = 0.05$)

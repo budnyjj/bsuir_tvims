@@ -9,6 +9,8 @@ from matplotlib import rc
 rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)
 
+INF = 99999 # Too big value
+
 def inputData(data):
     filename = ""
     try:
@@ -16,7 +18,7 @@ def inputData(data):
         with open(filename) as f:
             for line in f:
                 data.append(float(line))
-    except:
+    except IOError:
         print "Usage: tr.py <filename>"
         sys.exit(0)
     
@@ -25,6 +27,7 @@ def inputData(data):
 def getEstimates(data):
     estimates = {}
     numData = float(len(data))
+    estimates['seriesSize'] = numData
 
     expValue = 0
     for x in data:
@@ -115,7 +118,11 @@ def getStatSeriesEqProbability(data):
         curSubInfo['length'] = curSubInfo['end'] - curSubInfo['start']
         curSubInfo['num'] = len(curSubInfo['series'])
         curSubInfo['freq'] = float(curSubInfo['num']) / dataNum
-        curSubInfo['statProbDensity'] = curSubInfo['freq'] / curSubInfo['length']
+
+        if curSubInfo['length'] != 0:
+            curSubInfo['statProbDensity'] = curSubInfo['freq'] / curSubInfo['length']
+        else:
+            curSubInfo['statProbDensity'] = INF
 
         statSeries.append(curSubInfo)
 
@@ -142,7 +149,7 @@ def getExponentialDistribution(estimates):
             return 1-math.exp(-1*l*t)
     return exponentialDistribution
 
-def getNormalDistribution(estimates):
+def getNormalDistribution(estimates, lower=-100, upper=100):
     m = estimates['expectation']
     s = math.sqrt(estimates['dispersion'])
     f = lambda x, m, s: \
@@ -150,9 +157,9 @@ def getNormalDistribution(estimates):
 
     # integral table
     valsX = []
-    x = -100
+    x = lower
     dx = 0.01
-    while x <= 100:
+    while x <= upper:
         valsX.append(x)
         x += dx
     del x

@@ -9,6 +9,7 @@ estimates = s.getEstimates(sample)
 s.printEstimates(estimates)
 print '~~~'
 
+s.exportVal(estimates['seriesSize'], 'val/series_size.tex')
 s.exportVal(estimates['expectation'], 'val/expectation_value.tex')
 s.exportVal(estimates['expectationInt'][0], 'val/expectation_min.tex')
 s.exportVal(estimates['expectationInt'][1], 'val/expectation_max.tex')
@@ -67,7 +68,7 @@ s.exportVal(kolmogorovExponential['z'], 'val/kolmogorov_exponential_z.tex')
 print 'kolmogorovExponential:', kolmogorovExponential['lambda']
 print '~~~'
 
-normalDistribution = s.getNormalDistribution(estimates)
+normalDistribution = s.getNormalDistribution(estimates, lower = -100, upper = 100)
 s.plotSampleOverlay(sample, normalDistribution, 'pic/sample_normal.png')
 pirsonNormal = s.getPirson(statSeriesEqSize, normalDistribution)
 print 'Pirson criteria for normal overlay:'
