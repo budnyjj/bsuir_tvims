@@ -112,9 +112,11 @@ def checkNotCorHypothesis(estimates):
     notCorValue = 0
     if estimates['numPoints'] < 50:
         notCorValue = math.fabs(estimates['corCoef']) * math.sqrt(estimates['numPoints'] - 2)
+        notCorValue /= math.sqrt(1-(estimates['corCoef'])**2)
     else:
         notCorValue = math.fabs(estimates['corCoef']) * math.sqrt(estimates['numPoints'])
-    notCorValue /= math.sqrt(1-(estimates['corCoef'])**2)
+        notCorValue /= (1-(estimates['corCoef'])**2)
+        
     return notCorValue
 
 
